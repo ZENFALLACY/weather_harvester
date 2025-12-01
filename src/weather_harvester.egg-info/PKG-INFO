@@ -1,3 +1,28 @@
+Metadata-Version: 2.4
+Name: weather-harvester
+Version: 1.0.0
+Summary: A resilient, testable Python CLI tool for fetching and monitoring weather data
+Author: Weather Harvester Team
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/weather-harvester
+Project-URL: Repository, https://github.com/yourusername/weather-harvester
+Keywords: weather,cli,monitoring,alerts,caching
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
 # Weather Harvester
 
 A resilient, production-grade Python CLI tool for fetching and monitoring weather data with intelligent caching, alerting, and a plugin architecture.
@@ -51,25 +76,23 @@ Get a free API key at: https://openweathermap.org/api
 
 ```bash
 # Fetch weather for a city
-python -m weather_harvester fetch --location "London"
+weather-harvester fetch --location "London"
 
 # Fetch using coordinates
-python -m weather_harvester fetch --location "40.7128,-74.0060"
+weather-harvester fetch --location "40.7128,-74.0060"
 
 # Get JSON output
-python -m weather_harvester fetch --location "Paris" --output json
+weather-harvester fetch --location "Paris" --output json
 ```
 
 ### 3. Monitor Continuously
 
 ```bash
 # Monitor a single location every 5 minutes
-python -m weather_harvester monitor --location "London" --interval 300
-
+weather-harvester monitor --locations "London" --interval 300
 
 # Monitor multiple locations in parallel
-python -m weather_harvester monitor --lat 51.5074 --lon -0.1278 --interval 300
-600 --parallel
+weather-harvester monitor --locations "London" "Paris" "Tokyo" --interval 600 --parallel
 ```
 
 ## CLI Commands
